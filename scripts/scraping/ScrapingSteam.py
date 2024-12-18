@@ -60,7 +60,6 @@ def obtener_ofertas_steam(categoria, orden=1, limite=5):
             "Descuento (%)": descuento_formateado,
             "Precio Original (S/.)": precio_original_sin_simbolo,
             "Precio con Descuento (S/.)": precio_final_sin_simbolo,
-            "Categoría": categoria,
             "Plataforma": "Steam"
         })
 

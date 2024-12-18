@@ -74,7 +74,6 @@ def scrape_gog(categoria_esp):
             "Descuento (%)": descuento_texto,
             "Precio Original (S/.)": f"{precio_original_soles:.2f} PEN",
             "Precio con Descuento (S/.)": f"{precio_descuento_soles:.2f} PEN",
-            "Categoría": categoria_esp,
             "Plataforma": "GOG"
         })
     

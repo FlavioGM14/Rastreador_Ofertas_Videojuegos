@@ -36,7 +36,6 @@ def scrape_epic_games(categoria_usuario):
                     'Descuento (%)': descuento.strip(),
                     'Precio Original (S/.)': precio_original.strip(),
                     'Precio con Descuento (S/.)': precio_descuento.strip(),
-                    'Categoría': categoria_usuario,
                     'Plataforma': 'Epic Games'
                 })
             except Exception as e:
