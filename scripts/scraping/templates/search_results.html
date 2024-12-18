@@ -4,21 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resultados de búsqueda - {{ categoria }}</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM2YkZokMKX2Jk6lYlqpR81dH17_ctQHwaFA&s" type="image/x-icon">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             padding: 20px;
+	    background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/788ecb45-01a2-4da0-b919-618d045b3c48/dddb92-e4e8b560-016f-4091-ae3d-c12046b11f8a.jpg/v1/fit/w_682,h_372,q_70,strp/pacman_pattern_by_xnightholw243_dddb92-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzcyIiwicGF0aCI6IlwvZlwvNzg4ZWNiNDUtMDFhMi00ZGEwLWI5MTktNjE4ZDA0NWIzYzQ4XC9kZGRiOTItZTRlOGI1NjAtMDE2Zi00MDkxLWFlM2QtYzEyMDQ2YjExZjhhLmpwZyIsIndpZHRoIjoiPD02ODIifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.alDXHdioNR7EchMR1KqHF8IcTEYIpX5ohZ66rtKhUD4'); /* Ruta a la imagen de fondo */
+            background-size: contain; 
+            background-position: center; 
+            background-attachment: fixed;
+            color: white; 
         }
         .table {
             margin-top: 20px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+            color: white;
         }
         .table th, .table td {
             text-align: center;
         }
-        /* Animación de Fade In */
-        .table {
-            animation: fadeIn 1s ease-in-out;
+        /* Color de la fila de los encabezados */
+        .table thead {
+            background-color: white; /* Fondo claro para los encabezados */
         }
+        /* Color de las letras de los encabezados */
+        .table thead th {
+            color: black; /* Letras negras en los encabezados */
+        }
+        /* Color de las filas del cuerpo de la tabla */
+        .table tbody tr {
+            background-color: black; /* Fondo más oscuro para las filas del cuerpo */
+        }
+
+        .table tbody tr:hover {
+            background-color: #262626; /* Color al pasar el ratón */
+            color: white;
+        }
+        /* Animación de Fade In */
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -27,10 +50,58 @@
                 opacity: 1;
             }
         }
+
+	    @keyframes slideIn {
+            0% {
+                transform: translateY(-50px); /* Empieza fuera de la pantalla arriba */
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0); /* Se mueve a su posición original */
+                opacity: 1;
+            }
+        }
+	    .container {
+            background-color: rgba(0, 0, 0, 1); 
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .header-container {
+            background-color: rgba(0, 0, 0, 1); /* Fondo oscuro para el contenedor del título */
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px; /* Espacio debajo del título */
+            animation: slideIn 1s ease-out;
+        }
+        h1 {
+            color: white; /* Asegura que el título sea blanco */
+            text-align: center; /* Centra el texto */
+        }
+        footer {
+            background-color: #111; /* Fondo oscuro */
+            color: #f4f4f9; /* Color del texto */
+            text-align: center;
+            padding: 10px 0; /* Espaciado interno arriba y abajo */
+            font-size: 14px;
+            margin-top: 40px; /* Separa el footer del contenido */
+        }
+        footer a {
+            color: #f4f4f9; /* Color del enlace */
+            text-decoration: none; /* Quita el subrayado */
+        }
+
+footer a:hover {
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+}
+        
     </style>
 </head>
 <body>
-    <h1 class="text-center">Resultados de la Categoría: {{ categoria }}</h1>
+    <div class="header-container">
+        <h1>Resultados de la Categoría: {{ categoria }}</h1>
+    </div>
+    
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -43,5 +114,16 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <footer style="background-color: #333; color: #fff; text-align: center; padding: 10px 0; font-size: 14px;">
+        <div>
+            <p>Contacto: 
+                <a href="20230418@lamolina.edu.pe" style="color: #fff; text-decoration: none;">20230418@lamolina.edu.pe</a> | 
+                <a href="20230396@lamolina.edu.pe" style="color: #fff; text-decoration: none;">20230418@lamolina.edu.pe</a>
+            </p>
+        </div>
+        <div>
+            <p>&copy; 2024 Rastreador de Ofertas de Videojuegos. Todos los derechos reservados.</p>
+        </div>
+    </footer>  
 </body>
 </html>

@@ -4,20 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rastreador de Ofertas de Videojuegos</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM2YkZokMKX2Jk6lYlqpR81dH17_ctQHwaFA&s" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%; /* Asegura que ocupen todo el alto */
+        }
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            font-family: 'Poppins', sans-serif;
+            color: #f4f4f9;
             text-align: center;
-            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+	        background-image: url('https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/788ecb45-01a2-4da0-b919-618d045b3c48/dddb92-e4e8b560-016f-4091-ae3d-c12046b11f8a.jpg/v1/fit/w_682,h_372,q_70,strp/pacman_pattern_by_xnightholw243_dddb92-375w-2x.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzcyIiwicGF0aCI6IlwvZlwvNzg4ZWNiNDUtMDFhMi00ZGEwLWI5MTktNjE4ZDA0NWIzYzQ4XC9kZGRiOTItZTRlOGI1NjAtMDE2Zi00MDkxLWFlM2QtYzEyMDQ2YjExZjhhLmpwZyIsIndpZHRoIjoiPD02ODIifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.alDXHdioNR7EchMR1KqHF8IcTEYIpX5ohZ66rtKhUD4'); 
+            background-size: contain;
+            background-position: center; 
+            background-attachment: fixed;
+        }
+        main {
+            flex: 1; /* Hace que el contenido principal ocupe el espacio sobrante */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        h1 {
+            color: white;
+            opacity: 0;
+            transform: translateY(-20px); 
+            animation: fadeIn 1s ease-in-out forwards; 
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         .container {
-            background-color: white;
+            background-color: black;
+            color: #f4f4f9;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             max-width: 400px;
-            margin: 0 auto;
+            margin-top: 50px;
+            margin-left: auto;
+            margin-right: auto;
+            opacity: 0;
+            transform: translateY(-20px);
+            animation: fadeInContainer 1s ease-in-out forwards 0.5s;
+        }
+        @keyframes fadeInContainer {
+            0% {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
         select, button {
             padding: 10px;
@@ -25,24 +78,70 @@
             margin: 10px 0;
             width: 100%;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: none;
+            background-color: white;
+            color: black;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            opacity: 0; 
+            transform: translateY(10px);
+            animation: fadeInButton 1s ease-in-out forwards 1s;
         }
-        button {
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
+        @keyframes fadeInButton {
+            0% {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        select, button {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            width: 100%;
+            border-radius: 5px;
+            border: none;
+            background-color: white;
+            color: black;
+            transition: background-color 0.3s ease, transform 0.2s ease;
         }
         button:hover {
-            background-color: #45a049;
+            background-color: #1565c0;
+            transform: scale(1.05);
         }
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px;
+                padding: 15px;
+            }
+            select, button {
+                font-size: 14px;
+            }
+        }
+        footer {
+            background-color: #111;
+            color: #f4f4f9;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+            margin-top: auto; /* Lo envía al final */
+        }
+
+        footer a {
+            color: #f4f4f9;
+            text-decoration: none;
+        }
+        
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Bienvenido al Rastreador de Ofertas de Videojuegos</h1>
-        <p>Selecciona una categoría para buscar juegos en oferta:</p>
         <form action="/search" method="get">
-            <select name="categoria" required>
+            <select id="categoria" name="categoria" required>
+                <option value="" disabled selected>Selecciona una categoría</option>
                 <option value="aventura">Aventura</option>
                 <option value="rpg">RPG</option>
                 <option value="acción">Acción</option>
@@ -56,5 +155,17 @@
             <button type="submit">Buscar Juegos</button>
         </form>
     </div>
+    
+    <footer style="background-color: #333; color: #fff; text-align: center; padding: 10px 0; font-size: 14px;">
+        <div>
+            <p>Contacto: 
+                <a href="20230418@lamolina.edu.pe" style="color: #fff; text-decoration: none;">20230418@lamolina.edu.pe</a> | 
+                <a href="20230396@lamolina.edu.pe" style="color: #fff; text-decoration: none;">20230418@lamolina.edu.pe</a>
+            </p>
+        </div>
+        <div>
+            <p>&copy; 2024 Rastreador de Ofertas de Videojuegos. Todos los derechos reservados.</p>
+        </div>
+    </footer>    
 </body>
 </html>

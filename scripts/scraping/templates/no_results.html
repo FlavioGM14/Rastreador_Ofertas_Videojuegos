@@ -4,13 +4,91 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No hay resultados</title>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQM2YkZokMKX2Jk6lYlqpR81dH17_ctQHwaFA&s" type="image/x-icon">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%; /* Asegura que ocupen todo el alto */
+        }
+        body {
+            padding: 20px;
+            background-image: url('file:///C:/Users/PC/Downloads/site/images/fondo.jpg'); /* Ruta a la imagen de fondo */
+            background-size: contain; 
+            background-position: center; 
+            background-attachment: fixed; 
+            height: 100vh; 
+            justify-content: center;
+            align-items: center;
+        }
+        main {
+            flex: 1; /* Hace que el contenido principal ocupe el espacio sobrante */
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 1);
+            padding: 40px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        h1 {
+            color: white; 
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0056b3; /* Cambia el color al pasar el ratón */
+        }
+        footer {
+            background-color: #111;
+            color: #f4f4f9;
+            text-align: center;
+            padding: 10px 0;
+            font-size: 12px;
+            margin-top: 340px; /* Lo envía al final */
+        }
+
+        footer a {
+            color: #f4f4f9;
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-    <div class="container text-center">
+    <div class="container">
         <h1>No se encontraron resultados para esta categoría.</h1>
-        <a href="/" class="btn btn-primary">Volver a la página principal</a>
+        <a href="/" class="btn">Volver a la página principal</a>
     </div>
+    <footer style="background-color: #333; color: #fff; text-align: center; padding: 10px 0; font-size: 14px;">
+        <div>
+            <p>Contacto: 
+                <a href="20230418@lamolina.edu.pe" style="color: #fff; text-decoration: none;">20230418@lamolina.edu.pe</a> | 
+                <a href="20230396@lamolina.edu.pe" style="color: #fff; text-decoration: none;">20230418@lamolina.edu.pe</a>
+            </p>
+        </div>
+        <div>
+            <p>&copy; 2024 Rastreador de Ofertas de Videojuegos. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>
 
