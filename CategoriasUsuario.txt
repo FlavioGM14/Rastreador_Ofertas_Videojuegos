@@ -1,0 +1,10 @@
+Diccionario de categorías disponibles para el usuario:
+-Aventura
+-RPG
+-Acción
+-Estrategia
+-Simulación
+-Deportes
+-Indie
+-Carreras
+-Disparos
